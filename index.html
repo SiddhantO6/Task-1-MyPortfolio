@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siddhant Nagar - Portfolio</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333333;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    nav {
+      background-color: #1a1a2e;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+    }
+
+    nav .logo {
+      color: #e94560;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: #ffffff;
+      font-size: 15px;
+    }
+
+    nav ul li a:hover {
+      color: #e94560;
+    }
+
+    #home {
+      background-color: #1a1a2e;
+      color: #ffffff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    #home h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    #home h1 span {
+      color: #e94560;
+    }
+
+    #home p {
+      font-size: 18px;
+      color: #aaaaaa;
+      margin-bottom: 30px;
+    }
+
+    #home a {
+      background-color: #e94560;
+      color: #ffffff;
+      padding: 12px 28px;
+      border-radius: 5px;
+      font-size: 15px;
+      margin: 5px;
+      display: inline-block;
+    }
+
+    #home a:hover {
+      background-color: #c73652;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 10px;
+      color: #1a1a2e;
+    }
+
+    .underline {
+      width: 50px;
+      height: 4px;
+      background-color: #e94560;
+      margin: 0 auto 40px auto;
+      border-radius: 2px;
+    }
+
+    #about {
+      background-color: #ffffff;
+      padding: 60px 40px;
+    }
+
+    #about p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 16px;
+      line-height: 1.8;
+      text-align: center;
+      color: #555555;
+    }
+
+    #skills {
+      background-color: #f5f5f5;
+      padding: 60px 40px;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .skill-box {
+      background-color: #ffffff;
+      border: 2px solid #e94560;
+      border-radius: 8px;
+      padding: 15px 25px;
+      font-size: 15px;
+      font-weight: bold;
+      color: #1a1a2e;
+    }
+
+    #projects {
+      background-color: #ffffff;
+      padding: 60px 40px;
+    }
+
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .project-card {
+      background-color: #f5f5f5;
+      border: 1px solid #dddddd;
+      border-radius: 10px;
+      padding: 25px;
+      width: 280px;
+    }
+
+    .project-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #1a1a2e;
+    }
+
+    .project-card p {
+      font-size: 14px;
+      color: #666666;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .project-card a {
+      color: #e94560;
+      font-size: 14px;
+      font-weight: bold;
+      margin-right: 15px;
+    }
+
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+
+    #contact {
+      background-color: #1a1a2e;
+      padding: 60px 40px;
+      color: #ffffff;
+    }
+
+    #contact .section-title {
+      color: #ffffff;
+    }
+
+    #contact p {
+      text-align: center;
+      color: #aaaaaa;
+      margin-bottom: 30px;
+      font-size: 15px;
+    }
+
+    .contact-form {
+      max-width: 550px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px 15px;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      background-color: #ffffff;
+      color: #333333;
+      font-family: Arial, sans-serif;
+    }
+
+    .contact-form textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    .contact-form button {
+      background-color: #e94560;
+      color: #ffffff;
+      border: none;
+      padding: 13px;
+      border-radius: 6px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #c73652;
+    }
+
+    #successMsg {
+      display: none;
+      background-color: #28a745;
+      color: #ffffff;
+      text-align: center;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 15px;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+
+    footer {
+      background-color: #111111;
+      color: #aaaaaa;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        gap: 12px;
+      }
+
+      #home h1 {
+        font-size: 28px;
+      }
+
+      .project-card {
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">Siddhant</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="home">
+    <h1>Hi, I'm <span>Siddhant Nagar</span> 👋</h1>
+    <p>B.Tech Student &nbsp;|&nbsp; Frontend Developer in the Making</p>
+    <a href="#projects">See My Work</a>
+    <a href="#contact">Contact Me</a>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="underline"></div>
+    <p>
+      I am a B.Tech student keen to learn about front-end development.
+      Currently, I am a beginner in this field and still in the learning phase.
+      I have built projects like a portfolio, UI clones, and a calculator.
+      I am always ready to adapt to new technologies and improve my skills.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="underline"></div>
+    <div class="skills-list">
+      <div class="skill-box">HTML</div>
+      <div class="skill-box">CSS</div>
+      <div class="skill-box">JavaScript</div>
+      <div class="skill-box">C / C++</div>
+      <div class="skill-box">Python</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">My Projects</h2>
+    <div class="underline"></div>
+    <div class="projects-grid">
+
+      <!-- Netflix Clone -->
+      <div class="project-card">
+        <h3>🎬 Netflix Clone</h3>
+        <p>A copy of the Netflix homepage built using HTML and CSS.</p>
+        <a href="https://github.com/SiddhantO6/Task-3-NetflixClone" target="_blank">GitHub</a>
+        <a href="https://SiddhantO6.github.io/Task-3-NetflixClone" target="_blank">Live Demo</a>
+      </div>
+
+      <!-- Portfolio -->
+      <div class="project-card">
+        <h3>🧑‍🎨 My Portfolio</h3>
+        <p>This personal portfolio website — built from scratch with HTML, CSS, and JS.</p>
+        <a href="https://github.com/SiddhantO6/Task-1-MyPortfolio" target="_blank">GitHub</a>
+        <a href="https://SiddhantO6.github.io/Task-1-MyPortfolio" target="_blank">Live Demo</a>
+      </div>
+
+      <!-- Calculator -->
+      <div class="project-card">
+        <h3>🧮 Calculator</h3>
+        <p>A working calculator built with JavaScript that handles all basic math.</p>
+        <a href="https://github.com/SiddhantO6/Task-2-Calculator" target="_blank">GitHub</a>
+        <a href="https://SiddhantO6.github.io/Task-2-Calculator" target="_blank">Live Demo</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="underline" style="background-color: #e94560;"></div>
+    <p>Feel free to reach out via email or use the form below!</p>
+
+    <div class="contact-form">
+      <input type="text" id="name" placeholder="Your Name" />
+      <input type="email" id="email" placeholder="Your Email" />
+      <textarea id="message" placeholder="Your Message"></textarea>
+      <button onclick="sendMessage()">Send Message</button>
+    </div>
+
+    <div id="successMsg">✅ Thanks! Message received. I will get back to you soon.</div>
+
+  </section>
+
+  <footer>
+    <p>Made with ❤️ by Siddhant Nagar &nbsp;|&nbsp; 2025</p>
+  </footer>
+
+  <script>
+    function sendMessage() {
+      var name    = document.getElementById("name").value;
+      var email   = document.getElementById("email").value;
+      var message = document.getElementById("message").value;
+
+      if (name === "" || email === "" || message === "") {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      // Clear the form
+      document.getElementById("name").value    = "";
+      document.getElementById("email").value   = "";
+      document.getElementById("message").value = "";
+
+      // Show success message
+      document.getElementById("successMsg").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
